@@ -3,7 +3,7 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext.jsx";
 import { LogOut, Bell, BookOpen, User as UserIcon } from "lucide-react";
 
-const API = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : 'http://localhost:4000/api';
+const API = 'http://localhost:4000/api';
 
 export default function Profile({ logout }) {
   const { user } = useAuth();
