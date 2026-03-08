@@ -3,6 +3,8 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext.jsx";
 import { LogOut, Bell, BookOpen, User as UserIcon } from "lucide-react";
 
+const API = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+
 export default function Profile({ logout }) {
   const { user } = useAuth();
   const [mySubjects, setMySubjects] = useState([]);
@@ -16,7 +18,7 @@ export default function Profile({ logout }) {
 
   const fetchProfileData = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/profile", {
+      const res = await axios.get(`${API}/profile`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       setMySubjects(res.data.subjects || []);
@@ -36,7 +38,7 @@ export default function Profile({ logout }) {
     const updated = { ...preferences, [key]: value };
     setPreferences(updated);
     try {
-      await axios.patch("http://localhost:4000/api/notifications/preferences", updated, {
+      await axios.patch(`${API}/notifications/preferences`, updated, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
     } catch (err) {
@@ -48,7 +50,7 @@ export default function Profile({ logout }) {
     e.preventDefault();
     if (!newSubject.trim()) return;
     try {
-      const res = await axios.post("http://localhost:4000/api/my-subjects", { name: newSubject }, {
+      const res = await axios.post(`${API}/my-subjects`, { name: newSubject }, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       setMySubjects(res.data);
@@ -60,7 +62,7 @@ export default function Profile({ logout }) {
 
   const handleDeleteSubject = async (name) => {
     try {
-      await axios.delete(`http://localhost:4000/api/my-subjects/${encodeURIComponent(name)}`, {
+      await axios.delete(`${API}/my-subjects/${encodeURIComponent(name)}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       setMySubjects(mySubjects.filter(s => s !== name));

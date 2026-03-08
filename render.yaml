@@ -1,0 +1,42 @@
+services:
+  # Backend (Express Server)
+  - type: web
+    name: student-tasks-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run server
+    envVars:
+      - key: NODE_VERSION
+        value: 18.0.0
+      - fromContext: true
+        key: MONGO_URI
+      - fromContext: true
+        key: JWT_SECRET
+      - fromContext: true
+        key: EMAIL_USER
+      - fromContext: true
+        key: EMAIL_PASS
+      - fromContext: true
+        key: VAPID_PUBLIC_KEY
+      - fromContext: true
+        key: VAPID_PRIVATE_KEY
+
+  # Frontend (React PWA)
+  - type: static
+    name: student-tasks-app
+    env: static
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routing:
+      rewrite:
+        - from: /*
+          to: /index.html
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: student-tasks-api
+          property: host
+        value: /api
