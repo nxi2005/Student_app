@@ -13,7 +13,7 @@ import Register from "./components/Register.jsx";
 import Home from "./components/Home.jsx";
 import AllTasks from "./components/AllTasks.jsx";
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+const API = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : 'http://localhost:4000/api';
 
 function AppContent() {
 	const { user, token, logout } = useAuth();

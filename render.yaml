@@ -23,7 +23,7 @@ services:
         key: VAPID_PRIVATE_KEY
 
   # Frontend (React PWA)
-  - type: static
+  - type: web
     name: student-tasks-app
     env: static
     plan: free
@@ -39,4 +39,3 @@ services:
           type: web
           name: student-tasks-api
           property: host
-        value: /api
