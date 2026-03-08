@@ -1,0 +1,53 @@
+{
+  "name": "student-tasks-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A modern, mobile-first task tracking application for students.",
+  "author": "Nikola",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "server": "nodemon server.js",
+    "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.13.6",
+    "bcrypt": "^6.0.0",
+    "canvas-confetti": "^1.9.4",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "framer-motion": "^12.35.1",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^0.577.0",
+    "mongoose": "^9.1.2",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^8.0.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.13.1",
+    "styled-components": "^6.3.11",
+    "vite-plugin-pwa": "^1.2.0",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "nodemon": "^3.1.11",
+    "vite": "^7.2.4"
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "author": "",
+  "license": "ISC"
+}
