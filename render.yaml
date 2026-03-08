@@ -1,3 +1,13 @@
+envVarGroups:
+  - name: student-tasks-config
+    envVars:
+      - key: MONGO_URI
+      - key: JWT_SECRET
+      - key: EMAIL_USER
+      - key: EMAIL_PASS
+      - key: VAPID_PUBLIC_KEY
+      - key: VAPID_PRIVATE_KEY
+
 services:
   # Backend (Express Server)
   - type: web
@@ -9,18 +19,7 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 18.0.0
-      - fromContext: true
-        key: MONGO_URI
-      - fromContext: true
-        key: JWT_SECRET
-      - fromContext: true
-        key: EMAIL_USER
-      - fromContext: true
-        key: EMAIL_PASS
-      - fromContext: true
-        key: VAPID_PUBLIC_KEY
-      - fromContext: true
-        key: VAPID_PRIVATE_KEY
+      - fromGroup: student-tasks-config
 
   # Frontend (React PWA)
   - type: web
