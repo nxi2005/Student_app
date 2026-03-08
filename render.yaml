@@ -29,10 +29,10 @@ services:
     plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: dist
-    routing:
-      rewrite:
-        - from: /*
-          to: /index.html
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
     envVars:
       - key: VITE_API_URL
         fromService:
