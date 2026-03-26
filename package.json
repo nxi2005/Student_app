@@ -1,11 +1,14 @@
 {
+  "overrides": {
+    "serialize-javascript": "^7.0.5"
+  },
   "name": "student-tasks-app",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "A modern, mobile-first task tracking application for students.",
-  "author": "Nikola",
-  "license": "MIT",
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "dev": "vite",
     "server": "nodemon server.js",
@@ -30,7 +33,6 @@
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.1",
     "styled-components": "^6.3.11",
-    "vite-plugin-pwa": "^1.2.0",
     "web-push": "^3.6.7"
   },
   "devDependencies": {
@@ -44,10 +46,8 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "nodemon": "^3.1.11",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vite-plugin-pwa": "^1.2.0"
   },
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-  "main": "eslint.config.js",
-  "author": "",
-  "license": "ISC"
+  "main": "eslint.config.js"
 }
