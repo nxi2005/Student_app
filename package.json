@@ -1,12 +1,9 @@
 {
-  "overrides": {
-    "serialize-javascript": "^7.0.5"
-  },
   "name": "student-tasks-app",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "description": "Student tasks application",
   "author": "",
   "license": "ISC",
   "main": "server.js",
@@ -20,6 +17,7 @@
     "preview": "vite preview",
     "cap:sync": "npm run build && npx cap sync"
   },
+  "dependencies": {
     "axios": "^1.13.6",
     "bcrypt": "^6.0.0",
     "canvas-confetti": "^1.9.4",
@@ -50,6 +48,5 @@
     "nodemon": "^3.1.11",
     "vite": "^7.2.4",
     "vite-plugin-pwa": "^1.2.0"
-  },
-  "main": "eslint.config.js"
+  }
 }

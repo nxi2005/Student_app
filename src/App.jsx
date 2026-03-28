@@ -13,7 +13,7 @@ import Register from "./components/Register.jsx";
 import Home from "./components/Home.jsx";
 import AllTasks from "./components/AllTasks.jsx";
 
-const API = 'http://localhost:4000/api';
+import API from "./config.js";
 
 function AppContent() {
 	const { user, token, logout } = useAuth();

@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+import API from '../config.js';
 
 const AuthContext = createContext();
 
@@ -16,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   }, [token]);
 
   const login = async (email, password) => {
-    const res = await axios.post('http://localhost:4000/api/login', { email, password });
+    const res = await axios.post(`${API}/login`, { email, password });
     setToken(res.data.token);
     setUser(res.data.user);
     // We can still store it, but we won't load it on start as per "strictly on login"
@@ -24,7 +25,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (userData) => {
-    await axios.post('http://localhost:4000/api/register', userData);
+    await axios.post(`${API}/register`, userData);
   };
 
   const logout = () => {
