@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">student-tasks-app</string>
+    <string name="title_activity_main">student-tasks-app</string>
+    <string name="package_name">hr.nikola.studentApp</string>
+    <string name="custom_url_scheme">hr.nikola.studentApp</string>
+</resources>

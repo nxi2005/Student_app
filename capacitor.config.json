@@ -1,0 +1,5 @@
+{
+  "appId": "hr.nikola.studentApp",
+  "appName": "student-tasks-app",
+  "webDir": "dist"
+}
